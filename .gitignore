@@ -1,0 +1,25 @@
+# Composer
+/vendor/
+
+# Drupal core (managed by Composer)
+/web/core/
+
+# Contributed code (managed by Composer)
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+
+# User-uploaded files
+/web/sites/default/files/
+
+# Local configuration
+/web/sites/default/settings.local.php
+/web/sites/default/services.local.yml
+
+/.ddev/.importdbCommand
+/.ddev/.uploadCommand
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
