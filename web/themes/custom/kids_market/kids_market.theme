@@ -1,0 +1,39 @@
+<?php
+
+function kids_market_preprocess_node(array &$variables)
+{
+  $node = $variables['node'];
+
+  if ($node->bundle() === 'product') {
+
+    $age = $node->get('field_age')->entity;
+    $variables['age'] = $age ? $age->label() : '';
+
+    if (!$node->get('field_product_image')->isEmpty()) {
+      $media = $node->get('field_product_image')->entity;
+
+      if ($media) {
+        $variables['product_first_image'] = $media->get('field_media_image')->view([
+          'label' => 'hidden',
+        ]);
+      }
+    }
+  }
+}
+
+function kids_market_preprocess_views_view(array &$variables)
+{
+  $view = $variables['view'];
+
+  if ($view->id() === 'products_by_category') {
+    $category_id = $view->args[0] ?? NULL;
+
+    if ($category_id) {
+      $term = \Drupal\taxonomy\Entity\Term::load($category_id);
+
+      if ($term) {
+        $variables['category_title'] = $term->label();
+      }
+    }
+  }
+}

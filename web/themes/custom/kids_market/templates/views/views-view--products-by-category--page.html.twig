@@ -1,0 +1,13 @@
+<div class="category-page">
+
+	{% if category_title %}
+		<h1 class="category-page__title">
+			{{ category_title }}
+		</h1>
+	{% endif %}
+
+
+	<div class="category-page__products">
+		{{ rows }}
+	</div>
+</div>

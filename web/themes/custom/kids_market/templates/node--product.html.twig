@@ -1,0 +1,86 @@
+<article class="product">
+
+	<div class="product__image-slider">
+
+		<button type="button" class="product__slider-button product__slider-button--prev" aria-label="Previous image">
+			‹
+		</button>
+
+		<div class="product__image-scroll">
+			{{ content.field_product_image }}
+		</div>
+
+		<button type="button" class="product__slider-button product__slider-button--next" aria-label="Next image">
+			›
+		</button>
+	</div>
+
+	<div class="product__info">
+
+		<h1 class="product__title">{{ label }}</h1>
+
+		{% if not node.field_category.isEmpty() %}
+			{% set category = node.field_category.entity %}
+
+			<div class="product-category">
+				<a href="{{ path('view.products_by_category.page_1', {'arg_0': category.id}) }}">
+					{{ category.label }}
+				</a>
+			</div>
+		{% endif %}
+
+
+		<div class="product__price">
+			{{ content.field_price }}
+		</div>
+
+		<div class="product__attributes">
+			<div class="attribute">
+				<strong>Стать:</strong>
+				{{  content.field_gender }}
+			</div>
+			{% if age %}
+				<div class="attribute">
+					<strong>Вік:</strong>
+					{{ age }}
+				</div>
+			{% endif %}
+			{% if not node.field_size.isEmpty() %}
+
+				<div class="attribute">
+					<strong>Розмір:</strong>
+					{{ content.field_size }}
+				</div>
+			{% endif %}
+
+			{% if not node.field_condition.isEmpty() %}
+
+				<div class="attribute">
+					<strong>Умови:</strong>
+					{{ content.field_condition }}
+				</div>
+			{% endif %}
+
+
+			{% if not node.field_color.isEmpty() %}
+				<div class="attribute">
+					<strong>Колір:</strong>
+					{{ content.field_color }}
+				</div>
+			{% endif %}
+			{% if not node.field_season.isEmpty() %}
+				<div class="attribute">
+					<strong>Сезон:</strong>
+					{{ content.field_season }}
+				</div>
+			{% endif %}
+
+		</div>
+
+		<div class="product__description">
+			<h2>Опис товару</h2>
+			{{ content.field_product_description }}
+		</div>
+
+	</div>
+</article>

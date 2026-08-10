@@ -1,0 +1,13 @@
+global:
+  css:
+    theme:
+      css/style.css: {}
+      css/pages/product.css: {}
+      css/components/product-card.css: {}
+      css/pages/category.css: {}
+
+  js:
+    js/product-slider.js: {}
+
+  dependencies:
+    - core/drupal

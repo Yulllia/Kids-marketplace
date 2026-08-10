@@ -1,0 +1,10 @@
+name: Kids Market
+type: theme
+base theme: olivero
+
+description: Custom marketplace theme
+
+core_version_requirement: ^11
+
+libraries:
+  - kids_market/global
