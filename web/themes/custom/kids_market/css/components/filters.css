@@ -1,0 +1,141 @@
+.main-content__container,
+.region--content,
+#block-kids-market-content,
+.views-element-container,
+.products-filters,
+.products-filters .view-filters,
+.products-filters .view-content {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+.products-filters .view-filters {
+  width: 100%;
+  overflow: hidden;
+}
+
+.products-filters form.views-exposed-form {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-bottom: 40px;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  overflow-x: auto;
+  overflow-y: visible;
+
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+
+  box-sizing: border-box;
+}
+
+.products-filters form.views-exposed-form > * {
+  flex: 0 0 auto;
+}
+
+/* Category */
+.products-filters .fieldset--group {
+  max-width: 300px;
+}
+
+/* Age */
+.products-filters .form-item-field-age-target-id {
+  max-width: 180px;
+}
+
+/* Size */
+.products-filters .form-item-field-size-value {
+  max-width: 140px;
+}
+
+/* Condition */
+.products-filters fieldset[id^="edit-field-condition-value"] {
+  max-width: 400px;
+}
+
+/* Season */
+.products-filters fieldset[id^="edit-field-season-value"] {
+  max-width: 300px;
+}
+
+/* Price */
+.products-filters .form-item-field-price-value {
+  min-width: 180px;
+}
+
+.products-filters .form-checkboxes,
+.products-filters .form-radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fieldset--group .fieldset__legend--visible ~ .fieldset__wrapper {
+  border: unset;
+}
+
+.products-filters input[type="checkbox"],
+.products-filters input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.products-filters input[type="checkbox"] + label,
+.products-filters input[type="radio"] + label {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.products-filters input[type="checkbox"] + label:hover,
+.products-filters input[type="radio"] + label:hover {
+  border-color: #0c5594;
+}
+
+.products-filters .form-checkboxes ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.form-checkboxes .form-type-boolean,
+.form-radios .form-type-boolean {
+  margin-block: 0;
+}
+
+.products-filters input[type="checkbox"]:checked + label,
+.products-filters input[type="radio"]:checked + label {
+  background: #0c007a;
+  color: #fff;
+  border-color: #0c007a;
+}
+
+.products-filters .form-type-select > label,
+.products-filters .form-type-textfield > label {
+  display: block;
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  padding-block: var(--sp0-5);
+  padding-inline-start: var(--sp1);
+  padding-inline-end: var(--sp1);
+  background-color: var(--color--gray-45);
+  font-size: var(--font-size-l);
+  font-weight: 700;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  margin-block-start: 2px;
+  line-height: var(--line-height-s);
+}

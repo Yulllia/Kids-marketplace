@@ -4,7 +4,8 @@ global:
       css/style.css: {}
       css/pages/product.css: {}
       css/components/product-card.css: {}
-      css/pages/category.css: {}
+      css/components/filters.css: {}
+      css/components/grid-product-list.css: {}
 
   js:
     js/product-slider.js: {}

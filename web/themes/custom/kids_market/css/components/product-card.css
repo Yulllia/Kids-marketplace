@@ -1,6 +1,7 @@
 .product-card {
-  width: 100%;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .product-card__link {
