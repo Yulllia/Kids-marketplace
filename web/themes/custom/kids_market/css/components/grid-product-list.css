@@ -1,20 +1,11 @@
-/* Views */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-/* Entity Reference field inside Paragraph */
-.similar-products__grid .field--name-field-product-reference {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
 @media (max-width: 768px) {
-  .product-grid,
-  .similar-products__grid .field--name-field-product-reference {
+  .card-grid {
     grid-template-columns: 1fr;
   }
 }

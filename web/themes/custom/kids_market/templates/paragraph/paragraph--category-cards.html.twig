@@ -1,0 +1,16 @@
+{% set term = paragraph.field_category_taxonomy_term.entity %}
+
+<article class="category-card">
+
+	{{ content.field_category_image }}
+	{% if term %}
+		<a href="/category/{{ term.id() }}">
+			<h3 class="category-card__title">
+				{{ paragraph.field_category_name.value }}
+			</h3>
+		</a>
+	{% endif %}
+
+	{{ content.field_short_description }}
+
+</article>

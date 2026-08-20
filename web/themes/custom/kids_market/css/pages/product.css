@@ -6,6 +6,11 @@
   font-weight: 600;
 }
 
+.products-empty {
+  padding: 40px 20px;
+  text-align: center;
+}
+
 .product__attributes {
   display: grid;
   grid-template-columns: 140px 1fr;

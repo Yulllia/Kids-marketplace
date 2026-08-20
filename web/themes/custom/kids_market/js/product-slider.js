@@ -1,26 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".product__image-slider").forEach((slider) => {
-    const scrollContainer = slider.querySelector(".field__items");
-    const prevButton = slider.querySelector(".product__slider-button--prev");
-    const nextButton = slider.querySelector(".product__slider-button--next");
+  document.querySelectorAll(".card-slider, .product__image-slider").forEach((slider) => {
+
+    const scrollContainer =
+      slider.querySelector(".card-slider__scroll") ||
+      slider.querySelector(".field__items");
+
+    const prevButton = slider.querySelector(
+      ".card-slider__button--prev, .product__slider-button--prev"
+    );
+
+    const nextButton = slider.querySelector(
+      ".card-slider__button--next, .product__slider-button--next"
+    );
 
     if (!scrollContainer || !prevButton || !nextButton) {
       return;
     }
 
-    const images = scrollContainer.querySelectorAll(":scope > .field__item");
+    const items = scrollContainer.children;
+    const visibleItems = Number(slider.dataset.sliderItems) || 1;
 
-    if (images.length <= 1) {
+    if (items.length <= visibleItems) {
       slider.classList.add("no-slider");
       return;
     }
 
-    slider.classList.remove("no-slider");
-
     const getScrollAmount = () => {
-      const image = scrollContainer.querySelector(":scope > .field__item");
+      const item = items[0];
 
-      return image ? image.offsetWidth + 12 : scrollContainer.offsetWidth;
+      return item
+        ? item.offsetWidth + 24
+        : scrollContainer.offsetWidth;
     };
 
     const goNext = () => {
@@ -37,19 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
+    
+    console.log("slider:", slider);
+console.log("scroll:", scrollContainer);
+console.log("items:", items.length);
+console.log("prev:", prevButton);
+console.log("next:", nextButton);
+
     prevButton.addEventListener("click", goPrevious);
     nextButton.addEventListener("click", goNext);
-
-    slider.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        goPrevious();
-      }
-
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        goNext();
-      }
-    });
   });
 });

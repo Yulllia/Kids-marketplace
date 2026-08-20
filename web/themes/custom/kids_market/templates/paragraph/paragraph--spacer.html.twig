@@ -1,0 +1,7 @@
+{% set margin_top = paragraph.field_spacing.value|default('none') %}
+{% set margin_bottom = paragraph.field_bottom_spacing.value|default('none') %}
+
+<div
+  class="spacer spacer--top-{{ margin_top }} spacer--bottom-{{ margin_bottom }}"
+  aria-hidden="true">
+</div>

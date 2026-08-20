@@ -1,13 +1,11 @@
 <section class="similar-products">
 
-  {% if content.field_heading %}
-    <h2 class="similar-products__title">
-      {{ content.field_heading }}
-    </h2>
-  {% endif %}
+	{% if content.field_heading %}
+		<h2 class="similar-products__title">
+			{{ content.field_heading }}
+		</h2>
+	{% endif %}
 
-  <div class="similar-products__grid">
-    {{ content.field_product_reference }}
-  </div>
+	{{ content.field_product_reference }}
 
 </section>

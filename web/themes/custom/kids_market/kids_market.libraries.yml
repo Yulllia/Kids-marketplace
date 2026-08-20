@@ -6,6 +6,9 @@ global:
       css/components/product-card.css: {}
       css/components/filters.css: {}
       css/components/grid-product-list.css: {}
+      css/components/hero-slider.css: {}
+      css/components/card-slider.css: {}
+      css/components/spacer.css: {}
 
   js:
     js/product-slider.js: {}

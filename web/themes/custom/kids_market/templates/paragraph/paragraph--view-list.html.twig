@@ -1,0 +1,11 @@
+<section class="view-list">
+
+	{% if paragraph.field_title_view.value %}
+		<h3 class="view-list__title">
+			{{ paragraph.field_title_view.value }}
+		</h3>
+	{% endif %}
+
+	{{ content.field_view_display_list }}
+
+</section>
